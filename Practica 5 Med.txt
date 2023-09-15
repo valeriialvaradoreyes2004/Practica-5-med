@@ -1,0 +1,94 @@
+Ejercicio 1 
+def suma_numeros(*args):
+    suma = 0
+    for numero in args:
+        suma += numero
+    return suma
+
+# Ejemplo de uso
+resultado = suma_numeros(5, 10, 15, 20)
+print("La suma de los números es:", resultado)
+
+
+Ejercicio 2 
+import math
+
+def calcular_raiz_n(numero, n):
+    if numero < 0 and n % 2 == 0:
+        raise ValueError("No se puede calcular la raíz par de un número negativo.")
+    return math.pow(numero, 1/n)
+
+# Ejemplo de uso
+numero = 16
+n = 4
+resultado = calcular_raiz_n(numero, n)
+print(f"La raíz {n}-ésima de {numero} es: {resultado}")
+
+
+Ejercicio 3 
+def division_segura(dividendo, divisor):
+    if divisor == 0:
+        return "La división entre cero no está definida"
+    else:
+        return dividendo / divisor
+
+# Ejemplo de uso
+dividendo = 10
+divisor = 0
+resultado = division_segura(dividendo, divisor)
+print(resultado)
+
+Ejercicio 4
+import statistics
+
+# a. Ingresar n datos a una lista
+def ingresar_datos():
+    n = int(input("Ingrese la cantidad de datos: "))
+    datos = []
+    for i in range(n):
+        dato = float(input(f"Ingrese el dato {i+1}: "))
+        datos.append(dato)
+    return datos
+
+# b. Ordenar una lista de menor a mayor
+def ordenar_lista(lista):
+    return sorted(lista)
+
+# c. Calcular la sumatoria de los datos de una lista
+def sumatoria_lista(lista):
+    return sum(lista)
+
+# d. Calcular la media de los datos
+def media_lista(lista):
+    return statistics.mean(lista)
+
+# e. Calcular la mediana
+def mediana_lista(lista):
+    return statistics.median(lista)
+
+# f. Calcular la moda
+def moda_lista(lista):
+    try:
+        return statistics.mode(lista)
+    except statistics.StatisticsError:
+        return "No hay una moda única en los datos."
+
+# g. Calcular la desviación típica o estándar para datos sin agrupar
+def desviacion_estandar_lista(lista):
+    return statistics.stdev(lista)
+
+# Ejemplo de uso
+datos = ingresar_datos()
+print(f"Datos ingresados: {datos}")
+datos_ordenados = ordenar_lista(datos)
+print(f"Datos ordenados: {datos_ordenados}")
+suma_datos = sumatoria_lista(datos)
+print(f"Suma de los datos: {suma_datos}")
+media_datos = media_lista(datos)
+print(f"Media de los datos: {media_datos}")
+mediana_datos = mediana_lista(datos)
+print(f"Mediana de los datos: {mediana_datos}")
+moda_datos = moda_lista(datos)
+print(f"Moda de los datos: {moda_datos}")
+desviacion_datos = desviacion_estandar_lista(datos)
+print(f"Desviación estándar de los datos: {desviacion_datos}")
